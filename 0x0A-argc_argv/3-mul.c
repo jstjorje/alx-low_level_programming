@@ -1,32 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
-* main - Program that takes first two integer arguments and prints the product
-* @argc: Number of command line arguments
-* @argv: Array name
-* Return: 1 if not enough arguments passed in, 0 otherwise
+* main - multiplies two numbers.
+* @argc: number of arguments
+* @argv: array of arguments
+*
+* Return: 0 if successful, 1 otherwise
 */
-
 int main(int argc, char *argv[])
 {
-	int i, j;
+	int res;
 
-	if (argc == 1 || argc == 2)
+	if (argc == 3)
+	{
+		res = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", res);
+		return (0);
+
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else
-	{
-		j = 1;
-
-		for (i = 1; i < 3; i++)
-			j *= atoi(argv[i]);
-
-		printf("%d\n", j);
-	}
-
-	return (0);
 }
